@@ -22,6 +22,7 @@ if (message.channel.type === "text") return;
 if (!message.content.startsWith(prefix)) return;
 const group = message.channel;
 const msg = message.content.toLowerCase();
+const bot = client.user;
 const args = msg.split(" ");
 const command = args.shift().slice(config.prefix.length)
 
