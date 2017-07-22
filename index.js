@@ -6,7 +6,6 @@ const config = require('./config.json');
 const prefix = config.prefix;
 const botOwnerID = config.botOwnerID;
 
-
 client.on('ready', () => {
 const bot = client.user;
 console.log(`I am Ready in ${client.guilds.size} servers and ${client.channels.size} channel!\nWorking for ${client.users.size} users.\n\n`);
@@ -19,7 +18,7 @@ bot.setGame(config.game);
 });
 
 client.on('message', message => {
-if (message.channel.type !== "group") return;
+if (message.channel.type === "text") return;
 if (!message.content.startsWith(prefix)) return;
 const group = message.channel;
 const msg = message.content.toLowerCase();
