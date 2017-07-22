@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 client.login(process.env.TOKEN)
-const bot = client.user
 
 const config = require('./config.json');
 const prefix = config.prefix;
@@ -9,6 +8,7 @@ const botOwnerID = config.botOwnerID;
 
 
 client.on('ready', () => {
+const bot = client.user;
 console.log(`I am Ready in ${client.guilds.size} servers and ${client.channels.size} channel!\nWorking for ${client.users.size} users.\n\n`);
 if(config.streaming === true){
 bot.setGame(config.game, 'setStream');
