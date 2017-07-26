@@ -1,5 +1,6 @@
 exports.run = (client, message, args) => {
 const group = message.channel;
+if (group.type !== "group") return;
 const Discord = require("discord.js");
 const embed = new Discord.RichEmbed()
 .setTitle("Group Info")
