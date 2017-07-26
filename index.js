@@ -18,6 +18,8 @@ bot.setGame(config.game);
 });
 
 client.on('message', message => {
+if (message.author === client.user) return;
+if (message.author.bot) return;
 if (message.channel.type === "text") return;
 if (message.channel.type === "dm") {
 message.channel.send("Type `" + config.prefix + "help` for help.");
