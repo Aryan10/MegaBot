@@ -20,6 +20,9 @@ bot.setGame(config.game);
 client.on('message', message => {
 if (message.channel.type === "text") return;
 if (!message.content.startsWith(prefix)) return;
+if (message.channel.type === "dm") {
+message.channel.send("Type `" + config.prefix + "help` for help.");
+}
 const group = message.channel;
 const msg = message.content.toLowerCase();
 const bot = client.user;
