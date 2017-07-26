@@ -4,12 +4,6 @@ const group = message.channel;
 const Discord = require("discord.js");
 const groupMember = message.author;
 
-if (message.author === group.owner) {
-const groupOwner = "true";
-}else {
-const groupOwner = "false";
-}
-
 const embed = new Discord.RichEmbed()
 .setTitle(groupMember.name)
 .setThumbnail(groupMember.avatarURL)
@@ -17,6 +11,6 @@ const embed = new Discord.RichEmbed()
 .addField(`User Name`, `${groupMember.username}_(${groupMember.tag})_`)
 .addField("User ID", groupMember.id)
 .addField("Joined Discord", groupMember.createdAt)
-.addField(`Other Info`, `Status: ${groupMember.presence.status}\nDiscrim: ${groupMember.discriminator}\nGroup Owner: ${groupOwner}\nBot: ${groupMember.bot}`);
+.addField(`Other Info`, `Status: ${groupMember.presence.status}\nDiscrim: ${groupMember.discriminator}\nBot: ${groupMember.bot}`);
 message.channel.send({embed});
 }
