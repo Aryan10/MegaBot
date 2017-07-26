@@ -2,12 +2,7 @@ exports.run = (client, message, args) => {
 const config = require("../config.json");
 const group = message.channel;
 const Discord = require("discord.js");
-
-if (message.content === config.prefix + "userinfo") {
 const groupMember = message.author;
-}else {
-const groupMember = message.mentions.users.first();
-}
 
 if (message.author === group.owner) {
 const groupOwner = "true";
