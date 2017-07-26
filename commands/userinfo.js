@@ -12,7 +12,7 @@ const groupMember = message.mentions.users.first();
 if (message.author === group.owner) {
 const groupOwner = "true";
 }else {
-const groupOwner = "false",
+const groupOwner = "false";
 }
 
 const embed = new Discord.RichEmbed()
